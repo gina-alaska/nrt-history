@@ -14,13 +14,13 @@ IO.foreach(ARGV.first) do |item|
 	#puts peices[1]
 	#puts peices[2]
 	begin	
-		bin =  DateTime.strptime(peices[2], "%y%j.%H%M").strftime("%Y")
+		bin =  DateTime.strptime(peices[2], "%y%j.%H%M").strftime("%Y/%m")
 	rescue ArgumentError
 		STDERR.puts "Invalid date #{item}"
 		next
 	end
 
-	platform = peices[1]	
+	platform = peices[1].upcase
 	
 	
 	dates[platform] = {} unless dates[platform]
